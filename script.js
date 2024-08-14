@@ -27,15 +27,19 @@ console.log(`Факториал ${num} равен ${factorial}`);
 console.log("\nЗадача 3");
 const bicyclePrice = 60000;
 const giftMom = 1000;
-let giftDad = 1200;
-let years = 0;
-let currentMoney = 0;
-while (currentMoney < bicyclePrice) {
-  currentMoney += giftMom + giftDad;
-  giftDad += 1200;
-  years += 1;
+let giftDad = 1000;
+let age = 0;
+let tempGiftedMoney = 0;
+while (tempGiftedMoney < bicyclePrice) {
+  if (age <= 10) tempGiftedMoney += giftMom + giftDad;
+  else {
+    giftDad += 1200;
+    tempGiftedMoney += giftMom + giftDad;
+  }
+
+  age += 1;
 }
-console.log(`Через ${years} лет`);
+console.log(age - 1);
 
 // Задача 4
 
